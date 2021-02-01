@@ -22,10 +22,10 @@ public class Classe {
 
     public void readFile(String fileName)
     {
+        Scanner scanner = null;
         try {
             File notes = new File(fileName);
-            Scanner scanner = new Scanner(notes);
-
+            scanner = new Scanner(notes);
             while(scanner.hasNextLine())
             {
                 String line = scanner.nextLine();
@@ -34,7 +34,6 @@ public class Classe {
                 float note = Float.parseFloat(data[1]);
                 etudiants.add(new Etudiant(name, note));
             }
-            scanner.close();
 
             for (int i = 0; i < (etudiants.size() - 1); i++)
             {
@@ -48,6 +47,10 @@ public class Classe {
         catch (FileNotFoundException e)
         {
             System.out.println("Le fichier n'a pas été trouvé.");
+        }
+        finally
+        {
+            scanner.close();
         }
     }
 
