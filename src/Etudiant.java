@@ -31,4 +31,9 @@ public class Etudiant {
     public void setNote(float note) {
         this.note = note;
     }
+
+    public void printInfo()
+    {
+        System.out.printf("%-24s %15d" ,getNom(), Math.round(getNote()));
+    }
 }

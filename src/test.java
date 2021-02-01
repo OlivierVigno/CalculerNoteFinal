@@ -12,6 +12,7 @@ public class test {
 
         students.readFile("notes.txt");
 
-        students.printInfo();
+        students.printStudentGrades();
+        students.printStats();
     }
 }
