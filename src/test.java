@@ -13,6 +13,9 @@ public class test {
         students.readFile("notes.txt");
 
         students.printStudentGrades();
+
+        System.out.printf("%-30s", "\nStatistiques du groupe");
+        System.out.printf("%-30s %s", "\n======================", "\n");
         students.printStats();
     }
 }

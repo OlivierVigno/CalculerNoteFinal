@@ -32,8 +32,9 @@ public class Etudiant {
         this.note = note;
     }
 
-    public void printInfo()
+    @Override
+    public String toString()
     {
-        System.out.printf("%-24s %15d" ,getNom(), Math.round(getNote()));
+        return (getNom() + " " + String.valueOf(Math.round(getNote())));
     }
 }

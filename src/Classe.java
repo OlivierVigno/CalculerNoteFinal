@@ -110,20 +110,13 @@ public class Classe {
 
     public void printStudentGrades()
     {
-        System.out.printf("%-24s %15s %s", "Nom", "Note Finale", "\n");
         for (Etudiant etudiant : etudiants)
         {
-            etudiant.printInfo();
-            if (etudiant.getNote() < 60)
-                System.out.printf("%s" , " EC\n");
-            else
-                System.out.printf("%s" , "\n");
+            System.out.println(etudiant + ((etudiant.getNote() < 60) ? " EC" : ""));
         }
     }
     public void printStats()
     {
-        System.out.printf("%-30s", "\nStatistiques du groupe");
-        System.out.printf("%-30s %s", "\n======================", "\n");
         System.out.printf("%-35s %5d %s", "\nnombre total d'étudiant : ", etudiants.size(), "\n");
         System.out.printf("%-35s %4d %s", "Nombre d'échec : ", getFailuresNumber(), "\n");
         System.out.printf("%-35s %7.1f %s", "Moyenne du groupe : ", getAverageGrade(), "\n");
